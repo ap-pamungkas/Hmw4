@@ -12,7 +12,7 @@ function createArrRandom(length) {
 }
 
 // membagi nilai acak menjadi 50 genap 50 ganjil
-function distributionValue(inputArray) {
+function separate(inputArray) {
   const evenValue = [];
   const oddValue = [];
   for (let i = 1; i <= inputArray.length; i++)
@@ -69,7 +69,7 @@ function rataRata(inputArray) {
 }
 
 const angkaRandom = createArrRandom(100);
-const [evenValue, oddValue] = distributionValue(angkaRandom);
+const [evenValue, oddValue] = separate(angkaRandom);
 const minEven = findMinValue(evenValue);
 const minOdd = findMinValue(oddValue);
 const maxEven = findMaxValue(evenValue);
