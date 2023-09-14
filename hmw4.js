@@ -13,7 +13,7 @@ function createArrRandom(length) {
 
 // membagi nilai acak menjadi 50 genap 50 ganjil
 function separate(inputArray) {
-  const evenValue = [];
+  const evenValue  = [];
   const oddValue = [];
   for (let i = 1; i <= inputArray.length; i++)
     if (inputArray[i] % 2 === 0) {
@@ -27,12 +27,15 @@ function separate(inputArray) {
 
 // nilai minimum untuk nilai genap dan ganjil
 
-function findMinValue(inputArray) {
+function findMinArr(inputArray) {
   let minArr = inputArray[0];
+  let maxArr = inputArray[0];
 
   for (let i = 0; i < inputArray.length; i++) {
     if (inputArray[i] < minArr) {
       minArr = inputArray[i];
+    }else if(inputArray[i] > maxArr){
+      maxArr = inputArray[i];
     }
   }
 
@@ -40,7 +43,7 @@ function findMinValue(inputArray) {
 }
 
 // nilai maksimum untuk nilai genap dan ganjil
-function findMaxValue(inputArray) {
+function findMaxArr(inputArray) {
   let maxArr = inputArray[0];
   for (i = 0; i < inputArray.length; i++) {
     if (inputArray[i] > maxArr) {
@@ -70,10 +73,10 @@ function rataRata(inputArray) {
 
 const angkaRandom = createArrRandom(100);
 const [evenValue, oddValue] = separate(angkaRandom);
-const minEven = findMinValue(evenValue);
-const minOdd = findMinValue(oddValue);
-const maxEven = findMaxValue(evenValue);
-const maxOdd = findMaxValue(oddValue);
+const minEven = findMinArr(evenValue);
+const minOdd = findMinArr(oddValue);
+const maxEven = findMaxArr(evenValue);
+const maxOdd = findMaxArr(oddValue);
 const evenTotal = total(evenValue);
 const oddTotal = total(oddValue);
 const evenAverage = rataRata(evenValue);
@@ -111,3 +114,6 @@ console.log(`ini total nilai ganjil :`, oddTotal);
 console.log(`ini nilai rata-rata angka genap:`, evenAverage);
 console.log(`ini nilai rata-rata angka ganjil:`, oddAverage);
 console.log(perbandingan);
+
+
+// arrow function dugunakan untuk stapmen yang ringkas
